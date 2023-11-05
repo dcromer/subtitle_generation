@@ -22,7 +22,7 @@ video.audio.write_audiofile(audio_path, verbose=False, logger=None)  # Suppress 
 
 # Step 2: Transcribe audio with Whisper
 print("Step 2: Transcribe audio with Whisper")
-model = whisper.load_model("base")
+model = whisper.load_model("base.en")
 result = model.transcribe(str(audio_path))
 
 # Helper function to format timestamps for SRT
