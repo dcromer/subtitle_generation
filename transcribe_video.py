@@ -43,10 +43,13 @@ for i, segment in enumerate(result['segments']):
     end = segment['end']
     text = segment['text']
 
+    if text is not None:
+        text = text.strip()
+
     start_time = format_timestamp(start)
     end_time = format_timestamp(end)
     
-    srt_content.append(f"{i+1}\n{start_time} --> {end_time}\n{text}\n")
+    srt_content.append(f"{i+1}\n{start_time} --> {end_time}\n{text}\n\n")
 
 # Step 4: Save SRT content to file
 print("Step 4: Save SRT content to file")
